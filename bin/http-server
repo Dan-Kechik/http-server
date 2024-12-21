@@ -190,9 +190,9 @@ function listen(port) {
     }
   }
 
-  if (printArg){
+  if (options.printArg){
     logger.info(chalk.cyan('Print arg has been passed'));
-    logger.info(chalk.cyan(printArg));
+    logger.info(chalk.cyan(options.printArg));
   }
   else{
     logger.info(chalk.red('Print arg has NOT been passed'));
