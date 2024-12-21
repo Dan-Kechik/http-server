@@ -159,6 +159,7 @@ function listen(port) {
     proxyOptions: proxyOptions,
     showDotfiles: argv.dotfiles,
     mimetypes: argv.mimetypes,
+    printArg: argv.printArg,
     username: argv.username || process.env.NODE_HTTP_SERVER_USERNAME,
     password: argv.password || process.env.NODE_HTTP_SERVER_PASSWORD,
     headers: {}
@@ -187,6 +188,14 @@ function listen(port) {
     else {
       setHeader(argv.header);
     }
+  }
+
+  if (printArg){
+    logger.info(chalk.cyan('Print arg has been passed'));
+    logger.info(chalk.cyan(printArg));
+  }
+  else{
+    logger.info(chalk.red('Print arg has NOT been passed'));
   }
 
   if (proxy) {
